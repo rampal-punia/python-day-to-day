@@ -1,7 +1,7 @@
 # For more on Python follow: https://twitter.com/CodingMantras
 
 
-'''🚀 Age Calculator In Python'''
+'''✨ Age Calculator In Python ✨'''
 from datetime import date
 import dateutil.relativedelta as rd
 
