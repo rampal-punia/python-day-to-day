@@ -40,6 +40,8 @@ In Years: 28.09
 
 As you would have noticed that this method is not 100% accurate as it does not take into account leap years.
 
+## Improve the code
+
 If you want to get a more accurate result you can use the dateutil library.
 
 For example:
@@ -73,3 +75,8 @@ Today: 2023-01-26
 DOB: 1995-01-01
 Age: 28 years, 0 months, 25 days
 ```
+
+### Support me
+
+- Give this repo a star
+- follow: [@CodingMantras](https://twitter.com/CodingMantras) on Twitter.

@@ -89,3 +89,8 @@ counts = collections.Counter(string_to_count.lower())
 for letter, count in counts.items():
     print(f"{letter=}, {count=}")
 ```
+
+### Support me
+
+- Give this repo a star
+- follow: [@CodingMantras](https://twitter.com/CodingMantras) on Twitter.
