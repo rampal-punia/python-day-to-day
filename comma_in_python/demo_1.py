@@ -1,6 +1,3 @@
-# For more on Python follow: https://twitter.com/CodingMantras
-
-
 '''✨ The comma is not an operator in Python, but a 
 separator between expressions. ✨
 '''
@@ -22,3 +19,6 @@ expression = ("a" in "b"), "a"
 
 # ❌ Incorrect:
 expression = "a" in ("b", "a")
+
+
+# For more on Python follow: https://twitter.com/CodingMantras
