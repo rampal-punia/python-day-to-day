@@ -130,3 +130,8 @@ If a function bound to a class is called by an instance of that class and passes
 Therefore, function and method are not directly dependent on where they are declared, and a function object can be called a method object by assigning it to a class.
 
 I am still open to the correction of the statement above...
+
+### Support me
+
+- Give this repo a star
+- follow: [@CodingMantras](https://twitter.com/CodingMantras) on Twitter.
