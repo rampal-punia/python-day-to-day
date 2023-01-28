@@ -3,6 +3,7 @@
 
 Get random output from a dice-roll
 '''
+
 import random
 
 # Possible outcomes
