@@ -15,3 +15,5 @@ print(score)
 # Method-2: Using randint from random module
 score = random.randint(1, 6)
 print(score)
+
+# For more on Python follow: https://twitter.com/CodingMantras
