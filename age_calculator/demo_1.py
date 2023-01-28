@@ -1,7 +1,5 @@
-# For more on Python follow: https://twitter.com/CodingMantras
-
-
 '''✨ Age Calculator In Python.✨'''
+
 from datetime import date
 
 # 👉 Given Date of Birth (Year, month, date)
@@ -25,3 +23,6 @@ years = total_days/365
 print(f"In Years: {years:.2f}")
 
 # Note: This does not take into account the leap year.
+
+
+# For more on Python follow: https://twitter.com/CodingMantras

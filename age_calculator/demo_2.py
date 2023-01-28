@@ -1,7 +1,5 @@
-# For more on Python follow: https://twitter.com/CodingMantras
-
-
 '''✨ Age Calculator In Python ✨'''
+
 from datetime import date
 import dateutil.relativedelta as rd
 
@@ -20,3 +18,6 @@ print(f"DOB: {dob}")
 # 👉 Take into account leap years and the difference in months and days also.
 diff = rd.relativedelta(today, dob)
 print(f"Age: {diff.years} years, {diff.months} months, {diff.days} days")
+
+
+# For more on Python follow: https://twitter.com/CodingMantras
