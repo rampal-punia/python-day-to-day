@@ -1,9 +1,9 @@
 '''✨ # 3 Different ways to solve FIZZBUZZ problem in Python ✨'''
 
-# First let us see what is a FIZZBUZZ problem in Python?
+# First let us see what is a FIZZBUZZ problem in Programming?
 
 '''
-FIZZBUZZ Problem in Programming
+FIZZBUZZ Problem:
     For a given number 'n', output:
 
     Fizz - If the number is divisible by 3
