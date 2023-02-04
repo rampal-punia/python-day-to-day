@@ -8,7 +8,7 @@ t = (1, 2, 3)
 # What would be the output of this print statement
 print(type(t))
 
-# Ans: <class 'tuple'>
+# Output: <class 'tuple'>
 # Correct
 
 # Now
@@ -17,13 +17,13 @@ t = 1, 2, 3
 # What would be the output of this print statement
 print(type(t))
 
-# Ans: <class 'tuple'>
+# Output: <class 'tuple'>
 
 # And also
 t = 1,
 
 print(type(t))
-# Ans: <class 'tuple'>
+# Output: <class 'tuple'>
 
 # I hope you were not expecting the class int here!
 
