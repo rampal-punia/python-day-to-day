@@ -50,8 +50,11 @@ class Temperature:
             raise ValueError("Can only subtract two Temperature objects")
 
 
+# Manual feed
 value = 50
 unit = 'F'
+
+# Take user input from console.
 # value = input("Enter temperature value: ")
 # unit = input("Enter temperature unit (C or F): ")
 temp1 = Temperature(value, unit)
