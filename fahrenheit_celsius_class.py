@@ -1,6 +1,6 @@
 '''✨ Python: Convert A Given Temperature Value. ✨
 Points:
-    - Convert Celsius to Fahrenheit an Vice-Versa.
+    - Convert Celsius to Fahrenheit and Vice-Versa.
     - Validate input for strings or any text-mix values.
     - Validate Input for absolute zero(Temperature above absolute zero only).
 '''
@@ -35,14 +35,32 @@ class Temperature:
             self.unit = 'F'
         return self.value
 
+    def __sub__(self, other):
+        if isinstance(other, Temperature):
+            if self.unit == 'F':
+                self.value = (self.value - 32) * 5/9
+                self.unit = 'C'
 
-value = input("Enter temperature value: ")
-unit = input("Enter temperature unit (C or F): ")
-temp = Temperature(value, unit)
+            if other.unit == 'F':
+                other.value = (other.value - 32) * 5/9
+                other.unit = 'C'
 
-if temp.value is not None:
-    print(f"Temperature in Celsius: {temp.to_celsius():.2f}")
-    print(f"Temperature in Fahrenheit: {temp.to_fahrenheit():.2f}")
+            return Temperature(self.value - other.value, 'C')
+        else:
+            raise ValueError("Can only subtract two Temperature objects")
+
+
+value = 50
+unit = 'F'
+# value = input("Enter temperature value: ")
+# unit = input("Enter temperature unit (C or F): ")
+temp1 = Temperature(value, unit)
+temp2 = Temperature(50, "C")
+temp_diff = temp1 - temp2
+if temp1.value is not None:
+    print(f"Temperature in Celsius: {temp1.to_celsius():.2f}")
+    print(f"Temperature in Fahrenheit: {temp1.to_fahrenheit():.2f}")
+    print(f"Temperature difference is {temp_diff.value} degrees Celsius.")
 else:
     print("Please enter a valid temperature value and unit.")
 
