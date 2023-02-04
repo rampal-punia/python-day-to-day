@@ -9,12 +9,12 @@ def validate_input(value):
         return None
 
 
-fahrenheit = input("Fahrenheit value: ")
+fahrenheit = input("Enter Fahrenheit value: ")
 fahrenheit = validate_input(fahrenheit)
 
 if fahrenheit is not None:
     celsius = (fahrenheit - 32) * 5/9
-    print(f"Celsius value of {fahrenheit} fahrenheit is {celsius:.2f}.")
+    print(f"Celsius value of {fahrenheit} Fahrenheit is {celsius:.2f}.")
 else:
     print("Please enter a valid number.")
 
