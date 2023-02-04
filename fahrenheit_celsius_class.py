@@ -1,8 +1,8 @@
-'''✨ Python: Convert A Temperature Value.. ✨
+'''✨ Python: Convert A Given Temperature Value. ✨
 Points:
     - Convert Celsius to Fahrenheit an Vice-Versa.
-    - Validate input for strings or any text mix values.
-    - Validate Input for absolute zero.
+    - Validate input for strings or any text-mix values.
+    - Validate Input for absolute zero(Temperature above absolute zero only).
 '''
 
 
@@ -38,7 +38,6 @@ class Temperature:
 
 value = input("Enter temperature value: ")
 unit = input("Enter temperature unit (C or F): ")
-
 temp = Temperature(value, unit)
 
 if temp.value is not None:
