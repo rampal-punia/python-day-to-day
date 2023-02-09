@@ -12,6 +12,9 @@ local_folder/
 /main.py
 main.py
 
+# images
+*.png
+
 
 # Distribution / packaging
 .Python

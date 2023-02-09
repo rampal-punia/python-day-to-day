@@ -1,19 +1,18 @@
-'''✨ Convert a Color Image To Grayscale ✨'''
+'''✨ Python: Resize an Image using OpenCv. ✨'''
 
 import cv2
 
 # Read orig image
 orig_img = cv2.imread('operations_on_images/laptops.jpg')
 
+# Resize orig image to fit screen
+resized = cv2.resize(orig_img, (400, 250))
+
 # Show orig image
 cv2.imshow('Orig Image', orig_img)
 
-# Code to convert orig image to Gray scale
-gray_img = cv2.cvtColor(orig_img, cv2.COLOR_BGR2GRAY)
-
-# Show Gray scale image
-cv2.imshow('Gray scale Image', gray_img)
-
+# Show resized image
+cv2.imshow('Resized Image', resized)
 
 if cv2.waitKey(0) & 0xFF == ord('q'):
     cv2.destroyAllWindows()
