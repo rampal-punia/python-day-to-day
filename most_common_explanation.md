@@ -23,7 +23,7 @@ counts=Counter({' ': 5, 'l': 3, 'o': 3, 'n': 3, 'i': 2, 'e': 2, 'a': 2, 't': 2, 
 
 ## Get most common 3 letters
 
-We can find the moost common 3 letters using the `most_common()` method. This method returns **a List with the n most common elements and their counts from the most common to the least. If n is None, then list all element counts**.
+We can find the most common 3 letters using the `most_common()` method. This method returns **a List with the n most common elements and their counts from the most common to the least. If n is None, then list all element counts**.
 
 For example:
 
