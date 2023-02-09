@@ -2,9 +2,6 @@
 
 from PIL import Image
 
-
-from PIL import Image
-
 image = Image.open("laptops.jpg")
 
 # Rotate image by 90 degrees clockwise
