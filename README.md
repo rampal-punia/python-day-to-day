@@ -4,6 +4,6 @@ A collection of Python day-to-day codes. These codes can help learning and under
 
 I have used these codes as demo on my twitter handle: [@CodingMantras](https://twitter.com/CodingMantras)
 
-Learning Python Is A Fun.
+Learning Python Is A Fun.Keep Improving!!!
 
-Keep Improving!!!
+If you find this repository helpful hit `star`.
