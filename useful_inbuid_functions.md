@@ -1,4 +1,4 @@
-# Most Frequently Used In-built Python Functions
+# Commonly used in-built functions In Python
 
 |In-built function|Used for|
 |-----------------|------------------|
