@@ -40,7 +40,7 @@ print(type(x)) # Output: <class 'int'>
 ```
 
 int():
-Convert objects() to integers
+Convert a number or string to an integer, or return 0 if no arguments are given. If x is a number, return x.__int__(). For floating point numbers, this truncates towards zero.
 Ex:
 
 ```python
@@ -49,26 +49,23 @@ print(int(x, base=10))
 ```
 
 float():
+Convert a string or number to a floating point number, if possible(Correct Input).
 
 Ex:
 
 ```python
-print("Hello, World!")
-```
-
-Ex:
-
-```python
-print("Hello, World!")
+x = "42"
+print(float(x))
 ```
 
 str():
-Strings
+Create a new string object from the given object.
 
 Ex:
 
 ```python
-print("Hello, World!")
+x = 42
+print(str(x))
 ```
 
 sorted():
@@ -77,7 +74,10 @@ Sorts a list or other iterable object in ascending or descending order
 Ex:
 
 ```python
-print("Hello, World!")
+colors = ['Yellow', 'Blue', 'Orange']
+print(sorted(colors))
+
+# ['Blue', 'Orange', 'Yellow']
 ```
 
 sum():
@@ -87,20 +87,29 @@ Returns the sum of all elements in an iterable object, such as a list or tuple
 Ex:
 
 ```python
-print("Hello, World!")
+numbers = [1, 2, 3, 4, 5]
+print(sum(numbers)) # Output: 15
 ```
 
 max():
-
-min():
+With a single iterable argument, return its biggest item.
 
 Ex:
 
 ```python
-print("Hello, World!")
+numbers = [1, 2, 3, 4, 5]
+print(max(numbers)) # Output: 5
 ```
 
-Return the maximum and minimum values in an iterable object, respectively
+min():
+With a single iterable argument, return its smallest item.
+
+Ex:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+print(min(numbers)) # Output: 1
+```
 
 abs():
 Returns the absolute value of a number
@@ -108,7 +117,8 @@ Returns the absolute value of a number
 Ex:
 
 ```python
-print("Hello, World!")
+x = -42
+print(abs(x)) # Output: 42
 ```
 
 round():
@@ -117,7 +127,9 @@ Rounds a floating-point number to the nearest integer or to a specified number o
 Ex:
 
 ```python
-print("Hello, World!")
+x = 3.14159
+print(round(x)) # Output: 3
+print(round(x, 2)) # Output: 3.14
 ```
 
 zip():
@@ -126,25 +138,45 @@ Combines elements from multiple iterables into a single tuple
 Ex:
 
 ```python
-print("Hello, World!")
+colors = ['Yellow', 'Blue', 'Orange']
+
+hex_values = ['#FFFF00', '#0000FF', '#FFA500']
+
+for color, hex_value in zip(colors, hex_values):
+    print(color, hex_value)
+# Output:
+# Yellow  # FFFF00
+# Blue  # 0000FF
+# Orange  # FFA500
 ```
 
 map():
+Make an iterator that computes the function using arguments from each of the iterables. Stops when the shortest iterable is exhausted.
 
 Ex:
 
 ```python
-print("Hello, World!")
+def square(x):
+    return x * x
+
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(square, numbers))
+print(squared) # Output: [1, 4, 9, 16, 25]
 ```
 
 filter():
 
-Apply a function to each element of an iterable and return a new iterable containing the results
+Return an iterator yielding those items of iterable for which function(item) is true. If function is None, return the items that are true.
 
 Ex:
 
 ```python
-print("Hello, World!")
+def is_even(x):
+    return x % 2 == 0
+
+numbers = [1, 2, 3, 4, 5]
+evens = list(filter(is_even, numbers))
+print(evens) # Output: [2, 4]
 ```
 
 enumerate():
@@ -153,7 +185,13 @@ Returns an iterator containing pairs of the form (index, element)` for each elem
 Ex:
 
 ```python
-print("Hello, World!")
+colors = ['Yellow', 'Blue', 'Orange']
+for i, color in enumerate(colors):
+    print(i, color)
+# Output:
+# 0 apple
+# 1 banana
+# 2 cherry
 ```
 
 range():
@@ -162,7 +200,8 @@ Generates a sequence of integers, which can be used to control the number of ite
 Ex:
 
 ```python
-print("Hello, World!")
+for i in range(1, 100, 2):
+    print(i)
 ```
 
 reversed():
@@ -171,7 +210,9 @@ Returns a reverse iterator over the elements of a sequence, such as a list or a 
 Ex:
 
 ```python
-print("Hello, World!")
+colors = ['Yellow', 'Blue', 'Orange']
+for color in reversed(colors):
+    print(color)
 ```
 
 help():
@@ -180,7 +221,7 @@ Display the documentation or help for a specific object, such as a module, class
 Ex:
 
 ```python
-print("Hello, World!")
+help("def")
 ```
 
 dir():
@@ -189,5 +230,5 @@ Return a list of the names of all attributes, methods, and properties of an obje
 Ex:
 
 ```python
-print("Hello, World!")
+dir(list)
 ```
