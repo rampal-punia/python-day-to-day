@@ -42,7 +42,7 @@ temperatures.extend(cities)
 print(f"{temperatures=}")
 ```
 
-## Copy() method
+## copy() method
 
 Copy the original list and further use the remove and pop method on the copied list. So that the original list is intact.
 
@@ -60,7 +60,7 @@ from copy import deepcopy
 deep_copy = deepcopy(temperatures)
 ```
 
-## Sum() function
+## sum() function
 
 To find the average temperature for each city you can use the in-built sum function:
 

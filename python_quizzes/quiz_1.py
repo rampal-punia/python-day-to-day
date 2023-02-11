@@ -1,6 +1,6 @@
 '''✨ Python Quiz ✨
  
-What would be the output:
+What would be the output?
 A: 40
 B: 32
 C: 8
