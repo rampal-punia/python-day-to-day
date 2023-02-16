@@ -1,4 +1,4 @@
-'''✨ Check Palindrome ✨'''
+'''✨ Check if a string is Palindrome ✨'''
 
 # Method 1:
 
