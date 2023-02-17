@@ -2,7 +2,7 @@
 
 In Python, a set is an unordered collection of unique elements. The `clear()` method of a set is used to remove all the elements from the set.
 
-For Example::
+For Example:
 
 ```python
 # Creating a set
@@ -23,15 +23,15 @@ We create a set `my_set` containing the elements 1, 2, 3, 4, and 5. We then prin
 Output:
 
 ```python
-Original set: {1, 2, 3, 4, 5}
-Set after clear(): set()
+    Original set: {1, 2, 3, 4, 5}
+    Set after clear(): set()
 ```
 
-We can the `clear()` method removes all the elements from the set, leaving it empty.
+So, We can use the `clear()` method to remove all the elements from the set, leaving it empty.
 
-## Use of del method
+## Use of del keyword
 
-You can also use the `del` keyword to remove a set completely. But wait, if `del` also does the same thing them why do we have the `clear()` method?
+You can also use the `del` keyword to remove a set completely. But wait, if `del` also does the same thing then why do we have the `clear()` method?
 
 To understand it completely let's first understand what is the use of `del` keyword?
 
