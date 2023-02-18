@@ -37,18 +37,23 @@ Here, We create a set of numbers and then create a copy of the set using the `co
 
 Note: The `copy()` method creates a shallow copy of the set, which means that the elements themselves are not copied. Instead, both the original set and the copied set will reference the same objects. If the elements of the set are mutable (e.g., lists or dictionaries), changes made to those elements will be reflected in both the original set and the copied set. To create a deep copy of the set (i.e., a copy that includes copies of all the elements), you can use the copy.deepcopy() function from the Python copy module.
 
-Here's an example that demonstrates that the ID of the original set and the copied set are different:
+Here's an example that demonstrates that the ID of the original set and the copied set are different. But the ids of the elements are same:
 
 ```python
 # create a set of numbers
-numbers = {1, 2, 3, 4, 5}
+original_set = {1, 2, 3, 4, 5}
 
 # create a copy of the set using the copy() method
-numbers_copy = numbers.copy()
+copied_set = numbers.copy()
 
 # print the IDs of the original set and the copied set
-print(id(numbers))        # Output: 140589496696080
-print(id(numbers_copy))   # Output: 140589496696576
+print(id(original_set))        # Output: 140589496696080
+print(id(copied_set))          # Output: 140589496696576
+
+print("Original set id:", id(original_set))
+print("Copied set id:", id(copied_set))
+print("Original set element ids:", [id(x) for x in original_set])
+print("Copied set element ids:", [id(x) for x in copied_set])
 ```
 
 Here, We first create a set of numbers and assign it to the variable numbers. We then create a shallow copy of the set using the `copy()` method and assign it to the variable numbers_copy.
