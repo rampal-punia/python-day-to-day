@@ -41,7 +41,7 @@ print(copied_set)   # Output: {1, 2, 3, 4, 5}
 
 Here, We create a set of numbers `original_set` and then create a copy of the set `copied_set` using the `copy()` method. We then add a new number to the original set and print both sets to see the difference. We can see, the original set has the additional element, while the copied set remains unchanged.
 
-Note: The `copy()` method creates a shallow copy of the set, which means that the elements themselves are not copied. Instead, both the original set and the copied set will reference the same objects. If the elements of the set are mutable (e.g., lists or dictionaries), changes made to those elements will be reflected in both the original set and the copied set. To create a deep copy of the set (i.e., a copy that includes copies of all the elements), you can use the copy.deepcopy() function from the Python copy module.
+Note: The `copy()` method creates a shallow copy of the set, which means that the elements themselves are not copied. Instead, both the original set and the copied set will reference the same objects.
 
 An example to demonstrate that the ID of the original set and the copied set are different but the ids of the elements are same:
 
@@ -71,7 +71,7 @@ The ID of the original set and the copied set are different, we use the built-in
 
 ### Shallow copy
 
-The `copy()` method creates a shallow copy of the set. This means that if the set contains mutable objects, such as lists or dictionaries, the new set and the original set will both reference the same objects. This can lead to unexpected behavior if you modify these objects.
+The `copy()` method creates a shallow copy of the set.
 
 ### Performance
 
@@ -84,8 +84,6 @@ If you create a copy of a large set using the `copy()` method, it will consume a
 ### Immutable objects
 
 If the set only contains immutable objects, such as integers or strings, then using the `copy()` method should not cause any issues. Since these objects cannot be modified, there is no risk of unexpected behavior due to shared references.
-
-While the `copy()` method can be a convenient way to create a new set that is a copy of an existing set, it's important to be aware of its limitations and potential drawbacks, particularly when dealing with mutable objects. If you need to make a deep copy of a set that contains mutable objects, you may need to use a different approach, such as the deepcopy() function from the Python copy module.
 
 ## Other ways to achieve the same functionality as the `copy()` method in sets
 
@@ -113,13 +111,11 @@ This will create a new empty set using the set() constructor and then combine it
 
 ### Unpacking operator (*)
 
-Here's an example:
+This will create a new set new_set that contains the same elements as original_set. The unpacking operator (*) is used to pass the elements of the original_set to `{}`, which creates a new set with the same elements.
 
 ```python
 original_set = {1, 2, 3}
 new_set = {*original_set}
 ```
 
-This will create a new set new_set that contains the same elements as original_set. The unpacking operator (*) is used to pass the elements of the original_set as individual arguments to the set() function, which creates a new set with the same elements.
-
-All of these approaches will create a new set that is a copy of the original set, without modifying the original set. However, like the `copy()` method, they will create a shallow copy of the original set, so if the original set contains mutable objects, the new set and the original set will both reference the same objects.
+All of these approaches will create a new set that is a copy of the original set, without modifying the original set.
