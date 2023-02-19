@@ -58,14 +58,14 @@ print("Copied set id:", id(copied_set))
 # Original set id: 140113763621792
 # Copied set id: 140113764694944
 
-# print the IDs of the copied elements
+# print the IDs of the original & copied elements
 print("Original set element ids:", [id(x) for x in original_set])
 print("Copied set element ids:", [id(x) for x in copied_set])
 # Original set element ids: [9793088, 9793120, 9793152, 9793184, 9793216]
 # Copied set element ids: [9793088, 9793120, 9793152, 9793184, 9793216]
 ```
 
-The ID of the original set and the copied set are different, we use the built-in id() function to print the IDs of both sets. As you can see from the output, the IDs of the original set and the copied set are different, which confirms that they are distinct objects in memory. But the id of the copied elements are same. Which means both the sets reference to the same elements in the memory.
+The ID of the original set and the copied set are different, we use the built-in id() function to print the IDs of both sets. As you can see from the output, the IDs of the original set and the copied set are different, which confirms that they are distinct objects in memory. The ids of the `original_set` elements are the same as the ids of the `copied_set` elements. Which means both the sets reference to the same elements in the memory.
 
 ## A few things to keep in mind while using the `copy()` method for sets in Python
 
