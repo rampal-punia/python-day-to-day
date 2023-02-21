@@ -5,7 +5,6 @@ numbers = [1, 2, 3, 4, 5]
 squares = [n**2 for n in numbers]
 print(squares)  # Output: [1, 4, 9, 16, 25]
 
-
 # Filtering even numbers from a list using list comprehension:
 numbers = [1, 2, 3, 4, 5]
 even_numbers = [n for n in numbers if n % 2 == 0]
@@ -27,7 +26,6 @@ even_numbers = [n for n in range(1, 101) if n % 2 == 0]
 print(even_numbers)
 # Output: [2, 4, 6, ..., 100]
 
-
 # Convert a list of strings to integers
 str_list = ['1', '2', '3', '4', '5']
 int_list = [int(num) for num in str_list]
@@ -41,14 +39,12 @@ common_elements = [num for num in list1 if num in list2]
 print(common_elements)
 # Output: [3, 4, 5]
 
-
 # Remove duplicates from a list
 list_with_duplicates = [1, 2, 2, 3, 4, 4, 5]
 unique_list = [num for i, num in enumerate(
     list_with_duplicates) if num not in list_with_duplicates[:i]]
 print(unique_list)
 # Output: [1, 2, 3, 4, 5]
-
 
 # Transpose a matrix
 matrix = [[1, 2], [3, 4], [5, 6]]
@@ -62,7 +58,6 @@ numeric_list = [num for num in mixed_list if isinstance(
     num, int) or isinstance(num, float)]
 print(numeric_list)
 # Output: [1, 2, 3]
-
 
 # Sort a list of dictionaries by a specific key
 people = [{'name': 'Alice', 'age': 25}, {
