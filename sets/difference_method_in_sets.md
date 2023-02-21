@@ -55,15 +55,16 @@ set1 = {1, 2, 3}
 set2 = {3, 4, 5}
 list1 = [3, 4, 5]
 
-# Using difference() method
 diff = set1.difference(set2)
-print(diff)  # Output: {1, 4}
+print(diff)  # Output: {1, 2}
+
 diff = set1.difference(list1)
-print(diff)  # Output: {1, 4}
+print(diff)  # Output: {1, 2}
 
 # Using - operator
 diff = set1 - set2
-print(diff)  # Output: {1, 4}
+print(diff)  # Output: {1, 2}
+
 diff = set1 - list1
 print(diff)  # Output: TypeError: unsupported operand type(s) for -: 'set' and 'list'
 ```
