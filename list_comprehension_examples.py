@@ -24,7 +24,8 @@ print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6]
 
 # Creating a list of even numbers from 1 to 100 using list comprehension:
 even_numbers = [n for n in range(1, 101) if n % 2 == 0]
-print(even_numbers)  # Output: [2, 4, 6, ..., 100]
+print(even_numbers)
+# Output: [2, 4, 6, ..., 100]
 
 
 # Convert a list of strings to integers
