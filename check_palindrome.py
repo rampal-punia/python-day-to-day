@@ -1,4 +1,8 @@
-'''✨ Check if a string is Palindrome ✨'''
+'''✨ Check if a string is Palindrome ✨
+
+A palindrome is a word, number, phrase, or another sequence of 
+characters which read the same backward as forward, such as "Tenet".
+'''
 
 # Method 1:
 
