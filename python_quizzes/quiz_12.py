@@ -1,4 +1,4 @@
-'''✨ Python Quiz: difference_update() method ✨ 
+'''✨ Python Quiz: difference method ✨ 
 
 What is the result of the following code snippet?
 A) {1, 2, 3, 4, 5, 6, 7}
