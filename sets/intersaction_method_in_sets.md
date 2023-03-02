@@ -1,6 +1,6 @@
 # Intersection Method In Python Sets
 
-Python sets supports various fundamental operations from set theory such as union, intersection, difference, subset tests, and symmetric difference etc. In this explanation, we will focus on the intersection method in Python sets.
+Python sets support various fundamental operations from set theory such as union, intersection, difference, subset tests, and symmetric difference etc. In this explanation, we will focus on the intersection method in Python sets.
 
 The intersection method in Python sets is used to find the common elements between two or more sets. It returns a new set containing only the elements that are present in all of the given sets.
 
@@ -23,7 +23,6 @@ Let's look at some examples to understand the intersection method better:
 Example 1:
 
 ```python
-# With 2 sets
 set1 = {1, 2, 3, 4}
 set2 = {3, 4, 5, 6}
 
@@ -42,6 +41,7 @@ For example:
 ```python
 set1 = {1, 2, 3, 4}
 set2 = {3, 4, 5, 6}
+
 intersection = set1 & set2
 print(intersection) 
 
@@ -79,27 +79,25 @@ In this example, we have three sets `set1`, `set2`, and `set3`. The intersection
 
 One important thing to note about the intersection method is that it returns a new set object, and it does not modify the original sets. Therefore, it is safe to use the intersection method without worrying about accidentally modifying the original sets.
 
+For more info: The `&` operator is a binary operator, which means it takes two operands(Both be sets). The intersection method, on the other hand, is a method of the set class, and takes at least one argument (the other set(s) to find the intersection with).
 
-
-For more info: The `&` operator is a binary operator, which means it takes two operands. The intersection method, on the other hand, is a method of the set class, and takes at least one argument (the other set(s) to find the intersection with).
-
-Note: You cannot use the `&` operator to find the intersection between a list and a set directly. The & operator only works between two sets. If you want to find the intersection between a list and a set, you can first convert the list to a set and then use the & operator or the intersection method. For example:
+Note: You cannot use the `&` operator to find the intersection between a list and a set directly. The `&` operator only works between two sets. If you want to find the intersection between a list and a set, you can first convert the list to a set and then use the `&` operator or the intersection method. For example:
 
 ```python
-list1 = [1, 2, 3]
-set1 = {2, 3, 4}
+set1 = {1, 2, 3}
+list1 = [2, 3, 4]
 
-# This will throw error
-intersection = list1 & set1
+# This will throw an error
+intersection = set1 & list1
 print(intersection)
-# Output: TypeError: unsupported operand type(s) for &: 'list' and 'set'
+# Output: TypeError: unsupported operand type(s) for &: 'set' and 'list'
 
-# Convert list to set and works correctly
-intersection = set(list1) & set1
+# By converting the list to set works correctly
+intersection = set1 & set(list1)
 print(intersection)  # Output: {2, 3}
 
 # But the intersection method does not require any explicit conversion to set.
-intersection = set(list1).intersection(set1)
+intersection = set1.intersection(list1)
 print(intersection)  # Output: {2, 3}
 ```
 
