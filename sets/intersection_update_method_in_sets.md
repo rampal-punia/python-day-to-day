@@ -1,8 +1,6 @@
 # Intersection Update Methods in Sets
 
-The intersection_update() method in Python sets modifies the set calling the method by keeping only the elements that are also present in one or more specified sets.
-
-It means, this method updates a set with the intersection of itself and one or more other sets. It updates the set in-place and returns None. It takes one or more iterables (sets, lists, tuples, etc.) as its arguments.
+The intersection_update() method in Python sets updates a set with the intersection of itself and one or more other sets. It updates the set in-place and returns None. It takes one or more iterables (sets, lists, tuples, etc.) as its arguments.
 
 Here's an example code that demonstrates the usage of intersection_update() method:
 
@@ -20,28 +18,42 @@ print("Updated set1:", set1)
 # Output: Updated set1: {2, 3, 4}
 ```
 
-In the above code, we first define two sets set1 and set2. Then, we call the intersection_update() method on set1 with set2 as the argument. This will update set1 to contain only the elements that are also present in set2.
+In the above code, we first define two sets set1 and set2. Then, we call the intersection_update() method on set1 with set2 as the argument. This will update set1 to contain only the elements that are also present in set2. In this case, the updated set1 will contain {2, 3, 4} since these are the only elements that are present in both set1 and set2.
 
-In this case, the updated set1 will contain {2, 3, 4} since these are the only elements that are present in both set1 and set2.
-
-If we want to perform intersection update with more than one iterable, we can simply pass them as separate arguments to intersection_update() method. Here's an example code:
+Passing a list object as an argument to the intersection_update() method.
 
 ```python
-# Define three sets
-set1 = {1, 2, 3, 4, 5}
-set2 = {2, 3, 4, 6, 7}
-set3 = {3, 4, 5, 8, 9}
+# Define a set and a list
+set1 = {2, 3, 4, 6, 7}
+list1 = [1, 2, 3, 4, 4, 4, 5, 5]
 
-# Perform intersection update on set1 with set2 and set3
-set1.intersection_update(set2, set3)
+# Perform intersection with list1 and update set1
+set1.intersection_update(list1)
 
 # Print the updated set1
 print("Updated set1:", set1)
 
-# Output: Updated set1: {4}
+# Output: Updated set1: {2, 3, 4}
 ```
 
-In this example, we perform intersection update on set1 with set2 and set3 simultaneously by passing them as separate arguments to intersection_update() method. We use the method to update set1 with only the elements that are common to all three sets: set1, set2, and set3. After applying intersection_update(), set1 will only contain the value 4, which is present in all three sets.
+If we want to perform intersection update with more than one iterable, we can simply pass them as separate arguments to intersection_update() method. Here's an example code:
+
+```python
+# Define a set and two other iterables.
+set1 = {1, 2, 3, 4, 5}
+list1 = [2, 3, 4, 6, 7]
+tuple1 = (3, 4, 5, 8, 9)
+
+# Perform intersection update on set1 with list1 and tuple1
+set1.intersection_update(list1, tuple1)
+
+# Print the updated set1
+print("Updated set1:", set1)
+
+# Output: Updated set1: {3, 4}
+```
+
+In this example, we perform intersection update on set1 with list1 and tuple1 simultaneously by passing them as separate arguments to intersection_update() method. We use the method to update set1 with only the elements that are common to all three sets: set1, list1, and tuple1. After applying intersection_update(), set1 will only contain the value {3, 4}, which is present in all three iterables.
 
 ## Some quizzes related to the intersection_update() method
 
