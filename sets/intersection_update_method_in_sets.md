@@ -18,7 +18,27 @@ print("Updated set1:", set1)
 # Output: Updated set1: {2, 3, 4}
 ```
 
-In the above code, we first define two sets set1 and set2. Then, we call the intersection_update() method on set1 with set2 as the argument. This will update set1 to contain only the elements that are also present in set2. In this case, the updated set1 will contain {2, 3, 4} since these are the only elements that are present in both set1 and set2.
+In the above code, we first define two sets set1 and set2. Then, we call the intersection_update() method on set1 with set2 as the argument. This will update set1 to contain only the elements that are present in both set1 and set2. In this case, the updated set1 will contain {2, 3, 4} since these are the only elements that are present in both set1 and set2.
+
+The `&` operator is another way to perform the intersection of sets in Python. We can use it in conjunction with the intersection_update method to achieve the same result.
+
+Here's an example:
+
+```python
+# Define two sets
+set1 = {1, 2, 3, 4, 5}
+set2 = {2, 3, 4, 6, 7}
+
+# Perform intersection with & operator and update set1
+set1 &= set2
+
+# Print the updated set1
+print("Updated set1:", set1)
+
+# Output: Updated set1: {2, 3, 4}
+```
+
+In the above code, we first define two sets set1 and set2. We then perform the intersection of set1 and set2 using the & operator, and update set1 with the result using the intersection_update method. The resulting set set1 will contain only the elements that are present in both set1 and set2. The output of the code will be {2, 3, 4}.
 
 Passing a list object as an argument to the intersection_update() method.
 
@@ -54,6 +74,8 @@ print("Updated set1:", set1)
 ```
 
 In this example, we perform intersection update on set1 with list1 and tuple1 simultaneously by passing them as separate arguments to intersection_update() method. We use the method to update set1 with only the elements that are common to all three sets: set1, list1, and tuple1. After applying intersection_update(), set1 will only contain the value {3, 4}, which is present in all three iterables.
+
+To summarize, the intersection_update() method in Python sets, updates a set with the intersection of itself and one or more other sets, lists, or tuples. It updates the set in-place and returns None. By calling intersection_update() on a set with one or more other iterables as its arguments, we can update the set with only the elements that are common to all iterables. The method can also be used with the '&' operator as an alternative way of calling it. It has a time complexity of O(1) and can be used to find the intersection of any number of sets.
 
 ## Some quizzes related to the intersection_update() method
 
