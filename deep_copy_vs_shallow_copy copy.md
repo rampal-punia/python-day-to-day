@@ -27,7 +27,7 @@ In the above example, we have a list called `original_list` with four elements, 
 
 ## Deep Copy
 
-A deep copy, on the other hand, creates a new object and recursively copies all the mutable objects inside the original object. A deep copy is an entirely new object that is identical to the original object. This means that changes made to the mutable objects in the copied object will not affect the original object, and vice versa. We can use the `deepcopy()` method from the copy module to create a deep copy of an object.
+A deep copy, on the other hand, creates a new object and recursively copies all the mutable objects inside the original object. A deep copy is an entirely new object that is identical to the original object. This means that changes made to the mutable objects in the copied object will not affect the original object, and vice versa. We can use the `deepcopy()` method from the copy module to create a deep copy of an object. Here's an example:
 
 Here is an example:
 
@@ -47,4 +47,4 @@ print(deep_copy)
 
 In the above example, we use the `deepcopy()` method from the copy module to create a deep copy of `original_list` and assign it to `deep_copy`. Then we modify the nested list of `original_list` by appending a new element to it. When we print both `original_list` and `deep_copy`, we can see that `deep_copy` remains unchanged, as it is an entirely new object that is independent of the original list.
 
-In summary, the main difference between a shallow copy and a deep copy is how the objects are referenced. A shallow copy references the same memory locations as the original object, while a deep copy creates an entirely new object that is independent of the original object. It's essential to understand these differences, as they can affect the behavior of our programs when working with mutable objects.
+In summary, the main difference between a shallow copy and a deep copy is how the objects are referenced. A shallow copy references the same memory locations as the original object, while a deep copy creates an entirely new object that is independent of the original object.
