@@ -1,19 +1,39 @@
 # Named Tuple In Python
 
-named tuples as a lightweight alternative to defining classes. Named tuples are similar to tuples, but each field of the tuple has a name that can be accessed using dot notation.
+In Python, a namedtuple is a subclass of the built-in tuple type. It is a simple and convenient way to define a new class that behaves like an immutable tuple, but with named fields.
 
-named tuples are a convenient way to define simple classes for data storage and retrieval, without the overhead of defining a full-fledged class. Named tuples can also be used to define immutable classes, since the fields of the tuple cannot be modified once the tuple is created.
+A namedtuple is created using the `collections.namedtuple()` function. This function takes two arguments: the name of the new class, and a list of field names.
+
+Named tuples are like simple classes that you can create easily and quickly without writing a lot of code. You can use named tuples to store data and retrieve it later. You can also use them to create classes that cannot be changed once they are created, meaning that their values cannot be modified later on.
+
+For example, to create a namedtuple that represents a 2D point with x and y coordinates, we could do:
 
 ```python
 from collections import namedtuple
 
-City = namedtuple('City', 'name country population coordinates')
-tokyo = City('Tokyo', 'JP', 36.933, (35.689722, 139.691667))
+Point = namedtuple('Point', ['x', 'y'])
 ```
 
-In this example, we define a City named tuple using the namedtuple function from the collections module. The first argument to namedtuple is the name of the tuple, and the second argument is a string of field names separated by spaces. In this case, we define a City named tuple with fields for the city name, country, population, and coordinates.
+This creates a new class named Point that has two fields: x and y. We can now create instances of this class using the usual tuple syntax:
 
-We then create an instance of the City named tuple for Tokyo, with the appropriate values for each field. We can access the fields of the tuple using dot notation, as in tokyo.population or tokyo.coordinates.
+```python
+p = Point(1, 2)
+```
+
+We can access the fields of a namedtuple using dot notation, just like with regular objects:
+
+```python
+print(p.x)  # output: 1
+print(p.y)  # output: 2
+```
+
+One advantage of using a namedtuple instead of a regular tuple is that the fields have named attributes, which makes the code more readable and less error-prone. We can also use the _asdict() method to convert a namedtuple to a dictionary:
+
+```python
+print(p._asdict())  # output: {'x': 1, 'y': 2}
+```
+
+Finally, note that namedtuple instances are immutable, which means that their fields cannot be modified once they are created. This makes them useful for representing data that should not change, such as the configuration of a program.
 
 ## Key difference between using Python dictionaries and named tuples
 
@@ -109,21 +129,37 @@ an example of using named tuples for a weather data class:
 ```python
 from collections import namedtuple
 
+
 WeatherData = namedtuple('WeatherData', ['date', 'temperature', 'humidity'])
+
 
 class WeatherReport:
     def __init__(self):
         self.weather_data = []
 
     def add_weather_data(self, date, temperature, humidity):
-        self.weather_data.append(WeatherData(date=date, temperature=temperature, humidity=humidity))
+        data = WeatherData(date, temperature, humidity)
+        self.weather_data.append(data)
 
     def get_average_temperature(self):
-        return sum(data.temperature for data in self.weather_data) / len(self.weather_data)
+        temperatures = [data.temperature for data in self.weather_data]
+        return sum(temperatures) / len(temperatures)
 
     def get_average_humidity(self):
-        return sum(data.humidity for data in self.weather_data) / len(self.weather_data)
+        humidities = [data.humidity for data in self.weather_data]
+        return sum(humidities) / len(humidities)
+
+
+wr = WeatherReport()
+wr.add_weather_data('26 Mar', 37, 65)
+wr.add_weather_data('27 Mar', 36, 62)
+wr.add_weather_data('28 Mar', 38, 72)
+
+print(wr.weather_data)
+print(wr.get_average_temperature())
+print(wr.get_average_humidity())
 ```
+
 In this example, we define a named tuple WeatherData with three fields: date, temperature, and humidity. We then define a class WeatherReport that stores a list of WeatherData instances.
 
 The add_weather_data method is used to add new weather data to the report. The method creates a new instance of WeatherData using the namedtuple constructor and appends it to the weather_data list.

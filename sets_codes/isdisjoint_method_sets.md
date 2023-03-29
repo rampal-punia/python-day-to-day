@@ -1,6 +1,6 @@
 # isdisjoint method of in Python sets
 
-The isdisjoint() method is a built-in function that can be used to determine whether two sets have any common elements. The method returns `True` if the sets have no common elements, and `False` otherwise. In other words, this method returns `True` if two sets have a null intersection.
+The `isdisjoint()` method in the Python set is used to determine whether two sets have any common elements. The method returns `True` if the sets have no common elements, and `False` otherwise. In other words, this method returns `True` if two sets have a null intersection.
 
 Here is the syntax for the `isdisjoint()` method:
 
