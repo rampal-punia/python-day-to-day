@@ -8,6 +8,76 @@ When a Python file is run directly as the main program, the value of the special
 
 By using the `if __name__ == '__main__'` construct, you can specify code that should only be executed when the file is run as the main program, and not when it is imported as a module.
 
+So, the first question arises:
+
+## What is the difference between a Python Script and A Python module?
+
+A Python module is a file containing Python definitions and statements. It is used to organize code into logical, reusable chunks. A module can define functions, classes, and variables, and can also include runnable code. Modules are meant to be imported and used in other programs.
+
+For example, the math module in Python provides various mathematical functions like sqrt, cos, sin, etc.
+
+On the other hand, a Python script is a file containing a sequence of Python statements that are executed when the file is run. Scripts are used to automate tasks, run standalone programs, or test functionality. Scripts are typically standalone programs, unlike modules, which are meant to be imported and used in other programs.
+
+Here is an example of a Python module:
+
+```python
+# file: math_ops.py
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+```
+
+This module contains four functions that perform basic mathematical operations. The functions can be imported and used in other programs. Here's an example of how to use this module in another Python program:
+
+```python
+# file: main.py
+
+import math_ops
+
+a = 5
+b = 3
+
+print(math_ops.add(a, b))
+print(math_ops.subtract(a, b))
+print(math_ops.multiply(a, b))
+print(math_ops.divide(a, b))
+```
+
+This program imports the `math_ops` module and uses its functions to perform various mathematical operations on two numbers.
+
+Now let's look at an example of a Python script:
+
+```python
+# file: hello.py
+
+name = input("What is your name? ")
+
+print("Hello, " + name + "!")
+```
+
+This script prompts the user for their name and then prints a personalized greeting. To run this script, you can use the following command in your terminal or command prompt:
+
+```bash
+python hello.py
+```
+
+This will execute the script and prompt the user for their name. Once the name is entered, the script will print out the greeting.
+
+In summary, while both Python modules and Python scripts are text files containing Python code, they have different purposes and use cases. Modules are meant to be imported and used in other programs, while scripts are standalone programs that can be executed on their own from the command line or terminal.
+
+Now we can move further and understand how `if __name__ == '__main__'` construct help us to make a python file both a module as well as a script.
+
 ## How to use if __name__ == '__main__'
 
 The most common use of `if __name__ == '__main__'` is to define a block of code that should only be executed when the Python file is run as the main program. Here's an example:
@@ -65,7 +135,7 @@ The output shows that the `__name__` variable is set to `"__main__"`, and that t
 __name__ is example2
 ```
 
-The output shows that the __name__ variable is set to "example2", and that the say_hello() function is not called, since it is inside the if __name__ == "__main__": block.
+The output shows that the `__name__` variable is set to "example2", and that the `say_hello()` function is not called, since it is inside the `if __name__ == "__main__":` block.
 
 ### Benefits of using if __name__ == '__main__'
 
