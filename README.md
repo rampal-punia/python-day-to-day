@@ -2,7 +2,7 @@
 
 A collection of Python day-to-day codes. These codes can help learning and understanding various use cases of Python.
 
-I have used these codes as demo on my twitter handle: [@CodingMantras](https://x.com/rs_punia_)
+I have used these codes as demo on my twitter handle: [@rampal-punia](https://x.com/rs_punia_)
 
 Learning Python Is A Fun.Keep Improving!!!
 
