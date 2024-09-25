@@ -24,4 +24,4 @@ print(my_list)
 # The resulting list [1, 2, 3, 4] is stored in my_list.
 # Since append doesn't need to return anything, it returns None.
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

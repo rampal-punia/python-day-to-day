@@ -10,4 +10,4 @@ image = image.rotate(angle, expand=True)
 image.save("image_rotated_45.jpg")
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

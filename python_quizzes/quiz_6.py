@@ -29,4 +29,4 @@ print(hash(3.0) == hash(3))  # True
 # Output: {1: 'Ruby', 3.0: 'Python'}
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

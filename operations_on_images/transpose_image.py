@@ -17,4 +17,4 @@ image = image.transpose(Image.Transpose.ROTATE_270)
 image.save("image_rotated_270.jpg")
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

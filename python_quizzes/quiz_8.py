@@ -20,4 +20,4 @@ new_list = list(*original_list)
 # Answer:-
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

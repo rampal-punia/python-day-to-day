@@ -19,4 +19,4 @@ print(set1)
 {1, 2}
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

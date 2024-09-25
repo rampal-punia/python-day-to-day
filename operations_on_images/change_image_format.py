@@ -17,4 +17,4 @@ def change_format(image_path, required_format):
 change_format("laptops.jpg", "png")
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

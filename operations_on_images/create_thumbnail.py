@@ -17,4 +17,4 @@ def create_thumbnail(image_path, size=(128, 128)):
 create_thumbnail("laptops.jpg")
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

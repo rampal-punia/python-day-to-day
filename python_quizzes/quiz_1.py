@@ -13,4 +13,4 @@ print(int(x, base=8))
 # Output: ??? 💭
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_

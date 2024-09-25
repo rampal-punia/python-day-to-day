@@ -19,4 +19,4 @@ if cv2.waitKey(0) & 0xFF == ord('q'):
 print("done")
 
 
-# For more on Python follow: https://twitter.com/CodingMantras
+# For more on Python follow: https://x.com/rs_punia_
