@@ -1,7 +1,9 @@
 # For more on Python follow: https://x.com/rs_punia_
 
 
-'''✨ Python: Find Most Common Letter in a Sentence.'''
+"""✨ Python: Find Most Common Letter in a Sentence.
+Testing git push and pull.✨
+"""
 
 import collections
 
@@ -15,6 +17,5 @@ print(f"Most common 3 letters are: {counts.most_common(3)}")
 
 
 # Sort the list alphabetically
-sorted_list = {k: v for k, v in sorted(
-    counts.items(), key=lambda item: item[0])}
+sorted_list = {k: v for k, v in sorted(counts.items(), key=lambda item: item[0])}
 print(f"{sorted_list=}")
