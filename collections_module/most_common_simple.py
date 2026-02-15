@@ -2,8 +2,7 @@
 
 
 """✨ Python: Find Most Common Letter in a Sentence.
-Testing git push and pull.✨
-"""
+Testing git push and pull.✨"""
 
 import collections
 
