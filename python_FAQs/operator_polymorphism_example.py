@@ -1,36 +1,45 @@
-# Adding Numbers
-num1 = 1
-num2 = 2
-print(num1 + num2)  # Output: 3
+"""Operator Polymorphism — The + operator behaves differently per type.
 
-# Adding strings
-str1 = "Hello"
-str2 = "world"
-print(str1 + " " + str2)  # Output: "Hello world"
+Difficulty: 🟢 Easy
+Topics: operator overloading, polymorphism, __add__, TypeError
 
-# Adding numbers as string-literals
-str_num1 = "5"
-str_num2 = "2"
-print(str_num1 + str_num2)  # Output: 52
+Python's + operator dispatches to the __add__ method of the left operand.
+Different types implement __add__ differently:
+    int + int     → arithmetic addition
+    str + str     → concatenation
+    list + list   → list concatenation
+    tuple + tuple → tuple concatenation
+    set + set     → TypeError! (use | for union)
 
-# Adding lists
-list1 = [1, 2, 3]
-list2 = [4, 5, 6]
-print(list1 + list2)  # Output: [1, 2, 3, 4, 5, 6]
+Author: @rampal-punia
+"""
 
-# Adding tuples:
-tuple1 = (1, 2, 3)
-tuple2 = (4, 5, 6)
-print(tuple1 + tuple2)  # Output: (1, 2, 3, 4, 5, 6)
 
-# Adding sets
-set1 = {1, 2, 3}
-set2 = {2, 3, 4}
-print(set1 + set2)
-# Raises a TypeError:
-# unsupported operand type(s) for +: 'set' and 'set'
+def demo_operator_polymorphism() -> None:
+    """Demonstrate how + behaves differently for each type."""
+    examples: list[tuple[str, str, object]] = [
+        ("int", "1 + 2", 1 + 2),
+        ("float", "1.5 + 2.5", 1.5 + 2.5),
+        ("str", "'Hello' + ' world'", "Hello" + " world"),
+        ("str", "'5' + '2'", "5" + "2"),  # '52' not 7!
+        ("list", "[1,2,3] + [4,5,6]", [1, 2, 3] + [4, 5, 6]),
+        ("tuple", "(1,2,3) + (4,5,6)", (1, 2, 3) + (4, 5, 6)),
+    ]
 
-# Adding floats
-float1 = 1.5
-float2 = 2.5
-print(float1 + float2)  # Output: 4.0
+    print("── Operator Polymorphism: + ──\n")
+    for type_name, expr, result in examples:
+        print(f"  {type_name:<6} {expr:<25} = {result}")
+
+    # set + set raises TypeError
+    print(f"\n  {'set':<6} {{1,2,3}} + {{2,3,4}}", end="")
+    try:
+        {1, 2, 3} + {2, 3, 4}  # type: ignore[operator]
+    except TypeError as e:
+        print(f"         = TypeError: {e}")
+
+    # Use | for set union instead
+    print(f"  {'set':<6} {{1,2,3}} | {{2,3,4}}          = {({1, 2, 3} | {2, 3, 4})}")
+
+
+if __name__ == "__main__":
+    demo_operator_polymorphism()
