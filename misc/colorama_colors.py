@@ -1,10 +1,44 @@
-'''✨ Python Package: Colorama 
-Produce colored terminal text and Background.✨'''
+"""Colorama Colors — Produce colored terminal text & backgrounds.
 
-from colorama import Fore, Back
+Difficulty: 🟢 Easy
+Topics: colorama, Fore, Back, Style, terminal formatting
+Requires: pip install colorama
 
-print(Back.WHITE + "Set the background color to White!")
+Important: Always call Style.RESET_ALL after colored text,
+otherwise the color bleeds into subsequent output.
 
-print(Fore.RED + "This text will appear in Red!")
-print(Fore.GREEN + "This text will appear in Green!")
-print(Fore.BLUE + "This text will appear in Blue!")
+Author: @rampal-punia
+"""
+
+from colorama import Fore, Back, Style, init
+
+
+def demo_colors() -> None:
+    """Demonstrate foreground colors, backgrounds, and styles."""
+    # init() is needed on Windows for ANSI escape code support
+    init(autoreset=True)  # autoreset resets style after each print
+
+    print("── Foreground Colors ──")
+    print(Fore.RED + "  This text is Red")
+    print(Fore.GREEN + "  This text is Green")
+    print(Fore.BLUE + "  This text is Blue")
+    print(Fore.YELLOW + "  This text is Yellow")
+    print(Fore.CYAN + "  This text is Cyan")
+    print(Fore.MAGENTA + "  This text is Magenta")
+
+    print("\n── Background Colors ──")
+    print(Back.WHITE + Fore.BLACK + "  White background, black text")
+    print(Back.RED + "  Red background")
+    print(Back.GREEN + Fore.BLACK + "  Green background, black text")
+
+    print("\n── Styles ──")
+    print(Style.BRIGHT + "  Bright/Bold text")
+    print(Style.DIM + "  Dim text")
+    print(Style.NORMAL + "  Normal text (reset applied)")
+
+    # With autoreset=True, no manual reset needed
+    print("\nThis line has normal colors (autoreset worked).")
+
+
+if __name__ == "__main__":
+    demo_colors()
