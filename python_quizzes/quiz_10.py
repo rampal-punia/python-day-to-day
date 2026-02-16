@@ -1,24 +1,45 @@
-'''✨ Python Quiz: Remove an element from set ✨ 
+"""Quiz 10: set.remove() vs set.discard().
 
-What would be the behaviour of this code?
+Difficulty: 🟡 Intermediate
+Topics: set.remove(), set.discard(), KeyError
 
-A) Only Method A will work
-B) Only Method B will work
-C) Both methods (A & B) will work
-D) Both methods will generate an Error
-'''
-languages = {"Python", "Java", "JavaScript", "C++", "Ruby"}
-
-
-# Method 🅰️
-result = my_set.difference(my_list)
-
-# Method 🅱️
-result = my_set - my_list
+Question: Which method raises an error if the element is not found?
+    A) Only remove() raises KeyError
+    B) Only discard() raises KeyError
+    C) Both raise KeyError
+    D) Neither raises an error
+"""
 
 
-######################################################################
-# Answer:-
+def quiz() -> None:
+    """remove() raises KeyError; discard() silently does nothing."""
+    languages = {"Python", "Java", "JavaScript", "C++", "Ruby"}
 
+    print("── Quiz 10 ──")
+    print(f"  Original set: {languages}")
+
+    # discard() — safe, no error if missing
+    languages.discard("Ruby")
+    print(f"  After discard('Ruby'): {languages}")
+
+    languages.discard("Go")  # No error even though 'Go' not in set
+    print(f"  After discard('Go'):   {languages} (no error)")
+
+    # remove() — raises KeyError if missing
+    languages.remove("Java")
+    print(f"  After remove('Java'):  {languages}")
+
+    try:
+        languages.remove("Go")  # KeyError!
+    except KeyError as e:
+        print(f"  remove('Go'):          KeyError: {e}")
+
+    # Answer: A) Only remove() raises KeyError
+    print("\n  remove()  → raises KeyError if element is absent")
+    print("  discard() → does nothing if element is absent")
+
+
+if __name__ == "__main__":
+    quiz()
 
 # For more on Python follow: https://x.com/rs_punia_
