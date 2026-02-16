@@ -1,34 +1,92 @@
-# strftime() and strptime() Format Codes
+"""Datetime Format Codes — strftime() and strptime() reference.
+
+Difficulty: 🟢 Easy → 🟡 Intermediate
+Topics: strftime, strptime, format codes, date formatting, parsing
+
+strftime() = format a datetime object INTO a string
+strptime() = PARSE a string into a datetime object
+
+Author: @rampal-punia
+"""
 
 import datetime
 
-'''
-%a - Weekday as locale's abbreviated name.
-%A - Weekday as locale's full name.
-%w - Weekday as a decimal number, where 0 is Sunday and 6 is Saturday.
-%d - Day of the month as a zero-padded decimal number.
-%b - Month as locale's abbreviated name.
-%B - Month as locale's full name.
-%m - Month as a zero-padded decimal number.
-%y - Year without century as a zero-padded decimal number.
-%Y - Year with century as a decimal number.
-%H - Hour (24-hour clock) as a zero-padded decimal number.
-%I - Hour (12-hour clock) as a zero-padded decimal number.
-%p - Locale's equivalent of either AM or PM.
-%M - Minute as a zero-padded decimal number.
-%S - Second as a zero-padded decimal number.
-%f - Microsecond as a decimal number, zero-padded to 6 digits.
-%z - UTC offset in the form ±HHMM[SS[.ffffff]] 
-%Z - Time zone name
-%j - Day of the year as a zero-padded decimal number.
-%U - Week number of the year (Sunday as the first day of the week) as a zero-padded decimal number. All days in a new year preceding the first Sunday are considered to be in week 0.
-%W - Week number of the year (Monday as the first day of the week) as a zero-padded decimal number. All days in a new year preceding the first Monday are considered to be in week 0.
-%c - Locale's appropriate date and time representation.
-%x - Locale's appropriate date representation.
-%X - Locale's appropriate time representation
-'''
+# ────────────────────────────────────────────────────────────────
+# FORMAT CODE REFERENCE
+# ────────────────────────────────────────────────────────────────
+FORMAT_CODES: dict[str, str] = {
+    "%a": "Weekday abbreviated (Mon)",
+    "%A": "Weekday full name (Monday)",
+    "%w": "Weekday number (0=Sunday, 6=Saturday)",
+    "%d": "Day of month zero-padded (01-31)",
+    "%b": "Month abbreviated (Jan)",
+    "%B": "Month full name (January)",
+    "%m": "Month zero-padded (01-12)",
+    "%y": "Year without century (25)",
+    "%Y": "Year with century (2025)",
+    "%H": "Hour 24-hour zero-padded (00-23)",
+    "%I": "Hour 12-hour zero-padded (01-12)",
+    "%p": "AM or PM",
+    "%M": "Minute zero-padded (00-59)",
+    "%S": "Second zero-padded (00-59)",
+    "%f": "Microsecond zero-padded (000000-999999)",
+    "%z": "UTC offset (±HHMM)",
+    "%Z": "Time zone name",
+    "%j": "Day of year zero-padded (001-366)",
+    "%U": "Week number (Sunday start, 00-53)",
+    "%W": "Week number (Monday start, 00-53)",
+    "%c": "Locale date and time",
+    "%x": "Locale date",
+    "%X": "Locale time",
+}
 
-day = datetime.datetime(2021, 11, 20)
-print(f"{day} was a {day:%A}")
 
-# Output: 2021-11-20 00:00:00 was a Saturday
+def demo_format_codes() -> None:
+    """Demonstrate all strftime format codes with live output."""
+    now = datetime.datetime.now()
+    print(f"  Current datetime: {now}\n")
+
+    print(f"  {'Code':<6} {'Description':<42} {'Output'}")
+    print(f"  {'----':<6} {'-' * 42} {'------'}")
+    for code, desc in FORMAT_CODES.items():
+        try:
+            output = now.strftime(code)
+            print(f"  {code:<6} {desc:<42} {output}")
+        except ValueError:
+            print(f"  {code:<6} {desc:<42} (not available)")
+
+
+def demo_common_patterns() -> None:
+    """Show commonly used date/time formatting patterns."""
+    day = datetime.datetime(2021, 11, 20, 14, 30, 45)
+
+    patterns = [
+        ("%Y-%m-%d", "ISO date"),
+        ("%d/%m/%Y", "European date"),
+        ("%m/%d/%Y", "US date"),
+        ("%B %d, %Y", "Long date"),
+        ("%A, %B %d, %Y", "Full date with weekday"),
+        ("%H:%M:%S", "24-hour time"),
+        ("%I:%M %p", "12-hour time"),
+        ("%Y-%m-%d %H:%M:%S", "Datetime stamp"),
+    ]
+
+    print(f"\n  Formatting: {day}")
+    print(f"  {'Pattern':<26} {'Name':<24} {'Output'}")
+    print(f"  {'-' * 26} {'-' * 24} {'------'}")
+    for pattern, name in patterns:
+        print(f"  {pattern:<26} {name:<24} {day.strftime(pattern)}")
+
+    # Also show strptime (parsing)
+    print("\n  Parsing with strptime():")
+    date_str = "20-Nov-2021 14:30"
+    parsed = datetime.datetime.strptime(date_str, "%d-%b-%Y %H:%M")
+    print(f"  '{date_str}' → {parsed}")
+
+
+if __name__ == "__main__":
+    print("── Format Code Reference ──")
+    demo_format_codes()
+
+    print("\n── Common Formatting Patterns ──")
+    demo_common_patterns()
