@@ -1,32 +1,38 @@
-'''✨ Python Quiz ✨ 
+"""Quiz 6: Dict keys — hash(3.0) == hash(3).
 
-What would be the output:
-A) {1: 'Ruby', 3.0: 'Rust', 3: 'Python'}
-B) {1: 'Ruby', 3.0: 'Rust'}
-C) {1: 'Ruby', 3.0: 'Python'}
-D) Error
-'''
-languages = {}
-languages[1] = "Ruby"
-languages[3.0] = "Rust"
-languages[3] = "Python"
+Difficulty: 🟡 Intermediate
+Topics: dict keys, hash equality, float vs int, key overwriting
+
+Question: What is the output?
+    A) {1: 'Ruby', 3.0: 'Rust', 3: 'Python'}
+    B) {1: 'Ruby', 3.0: 'Rust'}
+    C) {1: 'Ruby', 3.0: 'Python'}
+    D) Error
+"""
 
 
-print(languages)
-# Output: ??? 💭
+def quiz() -> None:
+    """Dict keys are compared by hash AND equality."""
+    languages: dict[int | float, str] = {}
+    languages[1] = "Ruby"
+    languages[3.0] = "Rust"
+    languages[3] = "Python"  # Overwrites 3.0 because 3 == 3.0
 
-######################################################################
-# Answer:-
-# Ans: C
-# In Python, the dictionary keys are enforced with a hash table.
-# When Python compares two keys 2.0 and 2 according to their hash value,
-# it found them equal and overwrites the previous value.
-# In short 2.0 == 2.
+    print("── Quiz 6 ──")
+    print(f"  languages = {languages}")
+    # Answer: C) {1: 'Ruby', 3.0: 'Python'}
 
-print(hash(3.0))    # 3
-print(hash(3))      # 3
-print(hash(3.0) == hash(3))  # True
-# Output: {1: 'Ruby', 3.0: 'Python'}
+    # Explanation:
+    print(f"\n  3.0 == 3:         {3.0 == 3}")  # True
+    print(f"  hash(3.0):        {hash(3.0)}")  # 3
+    print(f"  hash(3):          {hash(3)}")  # 3
+    print(f"  hash(3.0)==hash(3): {hash(3.0) == hash(3)}")  # True
+    print("\n  Since 3.0 == 3 and hash(3.0) == hash(3),")
+    print("  Python treats them as the SAME key.")
+    print("  The original key (3.0) is kept, but value is updated to 'Python'.")
 
+
+if __name__ == "__main__":
+    quiz()
 
 # For more on Python follow: https://x.com/rs_punia_
