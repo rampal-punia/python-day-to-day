@@ -1,27 +1,33 @@
-'''✨ Python Quiz ✨ 
+"""Quiz 7: list.append() returns None.
 
-What would be the output:
-A) [1, 2, 3, 4]
-B) [1, 2, 3, 4, 4]
-C) None
-D) [4]
-'''
+Difficulty: 🟢 Easy
+Topics: list.append(), return value, in-place mutation
 
-my_list = list(range(1, 4))
-my_list.append(4)
-print(my_list)
+Question: What is the output?
+    A) [1, 2, 3, 4]
+    B) [1, 2, 3, 4, 4]
+    C) None
+    D) [4]
+"""
 
 
-# Output: ??? 💭
+def quiz() -> None:
+    """append() mutates in place and returns None."""
+    my_list = list(range(1, 4))  # [1, 2, 3]
+    my_list.append(4)
 
-######################################################################
-# Answer:-
-# Simple answer the append method, Append object to the end of the list.
-# and returns None
+    print("── Quiz 7 ──")
+    print(f"  my_list after append(4): {my_list}")
+    # Answer: A) [1, 2, 3, 4]
 
-# In depth answer: Internally, append creates a new list [4]
-# and calls the __add__ method to concatenate it with my_list.
-# The resulting list [1, 2, 3, 4] is stored in my_list.
-# Since append doesn't need to return anything, it returns None.
+    # But be careful with this pattern:
+    result = my_list.append(5)  # Returns None!
+    print(f"  result = my_list.append(5): {result}")
+    print(f"  my_list is now: {my_list}")
+    # append() modifies the list IN PLACE and returns None.
+
+
+if __name__ == "__main__":
+    quiz()
 
 # For more on Python follow: https://x.com/rs_punia_
