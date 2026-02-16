@@ -1,43 +1,58 @@
-'''✨ Python: Using datetime module ✨
+"""Using the datetime Module — Dates, times, and comparisons.
 
-The datetime module is a built-in module to work with 
-dates and times in Python. This module provides classes like 
-datetime, date, time, timedelta, etc.
-'''
+Difficulty: 🟢 Easy
+Topics: datetime, date, today(), date attributes, date comparison
+
+The datetime module provides classes:
+    datetime  — date + time combined
+    date      — date only (year, month, day)
+    time      — time only (hour, minute, second)
+    timedelta — duration between two dates
+
+Author: @rampal-punia
+"""
 
 from datetime import datetime
 
-# today: year-month-date, hr:min:sec.millisec,
-today = datetime.today()
-print(today)
 
-# date part of today
-date = today.date()
-print(date)
+def explore_datetime_attributes() -> None:
+    """Show how to extract parts from a datetime object."""
+    now = datetime.today()
 
-# Month part of today
-month = today.month
-print(month)
-
-# Day part of today
-day = today.day
-print(day)
-
-# You can try: today.hour, today.minute, weekday = today.weekday()
-
-# A simple example for comparison of dates
+    print("── Datetime Attributes ──")
+    print(f"  Full datetime:  {now}")
+    print(f"  Date part:      {now.date()}")
+    print(f"  Year:           {now.year}")
+    print(f"  Month:          {now.month}")
+    print(f"  Day:            {now.day}")
+    print(f"  Hour:           {now.hour}")
+    print(f"  Minute:         {now.minute}")
+    print(f"  Second:         {now.second}")
+    print(f"  Weekday:        {now.weekday()} (0=Mon, 6=Sun)")
+    print(f"  Day name:       {now.strftime('%A')}")
 
 
-# Get today's date
-today = datetime.today()
+def compare_dates() -> None:
+    """Demonstrate date comparison operators."""
+    today = datetime.today()
+    past_date = datetime(2023, 4, 15)
+    future_date = datetime(2030, 12, 31)
 
-# Create a date object for a specific date
-specific_date = datetime(2023, 4, 15)
+    print("\n── Date Comparisons ──")
+    for label, dt in [("Past", past_date), ("Future", future_date)]:
+        if today < dt:
+            status = "is in the future"
+        elif today.date() == dt.date():
+            status = "is TODAY!"
+        else:
+            status = "has already passed"
+        print(f"  {dt.date()} {status}")
 
-# Compare the two dates
-if today < specific_date:
-    print("The specific date is in the future.")
-elif today == specific_date:
-    print("Today is the specific date!")
-else:
-    print("The specific date has already passed.")
+    # Timedelta
+    diff = future_date - today
+    print(f"\n  Days until {future_date.date()}: {diff.days} days")
+
+
+if __name__ == "__main__":
+    explore_datetime_attributes()
+    compare_dates()
