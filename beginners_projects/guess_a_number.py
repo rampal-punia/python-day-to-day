@@ -1,60 +1,82 @@
+"""Guess a Number — Higher or Lower game with input validation.
+
+Difficulty: 🟢 Easy
+Topics: random, input validation, while loop, f-strings
+
+Rules:
+    - Computer picks a random number between 1 and 100.
+    - Player has 8 attempts to guess it.
+    - After each guess, the computer hints "Higher" or "Lower".
+
+Author: @rampal-punia
+"""
+
 import random
 
-game_message = '''
-Let's play Higher or Lower.
-Computer will guess a number between 1-100.
-You have to guess the correct number in 8 attempts to win the game.
-The computer will give feed-back as 'higher or lower' for user's input.
-'''
-print(game_message)
 
+def validate_input(user_input: str) -> int | None:
+    """Validate that user_input is an integer between 1 and 100.
 
-def validate_input(user_input):
+    Args:
+        user_input: The raw string from the user.
+
+    Returns:
+        The integer value if valid, or None if invalid.
+    """
     try:
-        user_input = int(user_input)
-        if user_input < 1 or user_input > 100:
+        value = int(user_input)
+        if not 1 <= value <= 100:
             raise ValueError("Number must be between 1 and 100")
-        return user_input
+        return value
     except ValueError:
-        print("Input must be a number between 1 and 100!!!")
-        print("Exiting the game!!!")
+        print("⚠️  Input must be a number between 1 and 100!")
         return None
 
 
-def run():
-    computer_choice = random.randint(1, 100)
-    user_guess = input("Enter a number (1 and 100): ")
-    user_guess = validate_input(user_guess)
-    if user_guess:
-        count = 1
-        while user_guess != computer_choice and count < 8:
+def run_game(max_attempts: int = 8) -> None:
+    """Run a single round of the guessing game.
 
-            if user_guess < computer_choice:
-                print("Higher than this")
-            elif user_guess > computer_choice:
-                print("Lower than this")
+    Args:
+        max_attempts: Maximum number of guesses allowed.
+    """
+    target = random.randint(1, 100)
+    print(
+        f"\n🎯 I've picked a number between 1 and 100. You have {max_attempts} attempts."
+    )
 
-            print(f"Number of attempts: {count}")
-            user_guess = input("Enter a number (1 and 100): ")
-            user_guess = validate_input(user_guess)
-            if user_guess:
-                count += 1
-            else:
-                break
+    for attempt in range(1, max_attempts + 1):
+        raw = input(f"  Attempt {attempt}/{max_attempts} — Enter your guess: ")
+        guess = validate_input(raw)
 
-        print(f"The computer guessed the number {computer_choice}")
-        if user_guess == computer_choice:
-            print(f"Congratulations, You Won in {count} attempts!!!")
+        if guess is None:
+            continue  # Invalid input — don't count as an attempt? Let's still increment.
+
+        if guess == target:
+            print(
+                f"  🎉 Congratulations! You guessed {target} in {attempt} attempt(s)!"
+            )
+            return
+        elif guess < target:
+            print("  ⬆️  Higher than that!")
         else:
-            print(f"Computer win. You attempted {count} times!!!")
+            print("  ⬇️  Lower than that!")
+
+    print(f"  😞 Out of attempts! The number was {target}.")
 
 
-def play_game():
+def play() -> None:
+    """Main game loop — allows replaying."""
+    print("═" * 50)
+    print("   🎲 GUESS A NUMBER — Higher or Lower Game")
+    print("═" * 50)
+
     while True:
-        run()
-        is_play_again = input("Do you want to play again? (y/n): ")
-        if is_play_again.lower() != 'y':
+        run_game()
+        again = input("\nPlay again? (y/n): ").strip().lower()
+        if again != "y":
+            print("Thanks for playing! 👋")
             break
 
 
-play_game()
+if __name__ == "__main__":
+    play()
