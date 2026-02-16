@@ -1,18 +1,27 @@
-'''✨ Python Quiz: Using round() function ✨ 
+"""Quiz 14: String slicing — reverse with [::-1].
 
-What is the result of the following code snippet?
-A) n
-B) nohtyP evol I
-C) Error
-'''
+Difficulty: 🟢 Easy
+Topics: string slicing, step parameter, reversal
 
-print("I love Python"[::-1])
+Question: What is the output of "I love Python"[::-1]?
+    A) n
+    B) nohtyP evol I
+    C) Error
+"""
 
-# Output: ??? 💭
+
+def quiz() -> None:
+    """[::-1] creates a reversed copy of the string."""
+    text = "I love Python"
+    reversed_text = text[::-1]
+
+    print("── Quiz 14 ──")
+    print(f"  '{text}'[::-1] = '{reversed_text}'")
+    # Answer: B) nohtyP evol I
+    # [::-1] means start:stop:step with step=-1 (reverse)
 
 
-######################################################################
-# Answer:- B
-
+if __name__ == "__main__":
+    quiz()
 
 # For more on Python follow: https://x.com/rs_punia_
