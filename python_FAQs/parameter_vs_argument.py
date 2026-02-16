@@ -1,25 +1,56 @@
-'''✨ Parameters 🆚 Arguments ✨
+"""Parameters vs Arguments — Know the difference.
 
-👩‍💻 Parameters: Variables declared with the function 
-declaration.
+Difficulty: 🟢 Easy
+Topics: parameters, arguments, function definition vs call
 
-🧑‍💻 Arguments: The actual values/data passed for the 
-placeholders in a function.
+Parameters = variables in the function DEFINITION (placeholders)
+Arguments  = actual values passed in the function CALL
 
-💎 How to remember:
-Parameters: Placeholders (P-P)
-Arguments: Actual values (A-A)
-'''
+Mnemonic:
+    Parameters → Placeholders (P ↔ P)
+    Arguments  → Actual values (A ↔ A)
+
+Author: @rampal-punia
+"""
 
 
-def area(length, width):
-    # 👉 Parameters: length, width(Placeholders)
+def area(length: float, width: float) -> float:
+    """Calculate the area of a rectangle.
+
+    'length' and 'width' are PARAMETERS (placeholders).
+
+    Args:
+        length: The length of the rectangle.
+        width: The width of the rectangle.
+
+    Returns:
+        The area (length * width).
+    """
     return length * width
 
 
-# 👉 Arguments: 10, 20(Actual values)
-result = area(10, 20)
-print(result)
+def greet(name: str, greeting: str = "Hello") -> str:
+    """Greet someone. 'greeting' has a default value.
 
+    Args:
+        name: The person's name (positional argument).
+        greeting: The greeting word (keyword argument with default).
+    """
+    return f"{greeting}, {name}!"
+
+
+if __name__ == "__main__":
+    # 10, 20 are ARGUMENTS (actual values)
+    result = area(10, 20)
+    print("── Parameters vs Arguments ──")
+    print(f"  area(10, 20) = {result}")
+    print(f"  Positional args:  area(10, 20)")
+    print(f"  Keyword args:     area(length=10, width=20)")
+    print(f"  Mixed:            area(10, width=20)")
+
+    print("\n── Default Parameters ──")
+    print(f"  greet('Alice')            = {greet('Alice')}")
+    print(f"  greet('Alice', 'Hey')     = {greet('Alice', 'Hey')}")
+    print(f"  greet(name='Bob')         = {greet(name='Bob')}")
 
 # For more on Python follow: https://x.com/rs_punia_
