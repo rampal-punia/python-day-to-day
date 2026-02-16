@@ -1,38 +1,39 @@
-'''✨ Python Quiz: Using round() function ✨ 
+"""Quiz 13: round() with booleans — banker's rounding.
 
-What is the result of the following code snippet?
-A) True
-B) False
-C) Erorr
-'''
+Difficulty: 🟡 Intermediate
+Topics: round(), banker's rounding, bool as int
 
-statement_1 = round(1.5 + True)
-statement_2 = round(1.5 + False)
-
-print(statement_1 == statement_2)
-
-# Output: ??? 💭
+Question: What is the output of statement_1 == statement_2?
+    A) True
+    B) False
+    C) Error
+"""
 
 
-######################################################################
-# Answer:- A True
+def quiz() -> None:
+    """Demonstrates 'round half to even' (banker's rounding)."""
+    statement_1 = round(1.5 + True)  # round(2.5) = 2
+    statement_2 = round(1.5 + False)  # round(1.5) = 2
 
-# Explanation:
-''' We need to understand 2 things here.
+    print("── Quiz 13 ──")
+    print(f"  round(1.5 + True)  = round(2.5) = {statement_1}")
+    print(f"  round(1.5 + False) = round(1.5) = {statement_2}")
+    print(f"  statement_1 == statement_2: {statement_1 == statement_2}")
 
-1. How round() function works!
-2. True and False are the subset of Python Data type int
+    # Answer: A) True
+    # Explanation:
+    #   1. bool is a subclass of int: True == 1, False == 0
+    #   2. Python 3 uses "round half to even" (banker's rounding):
+    #      round(2.5) = 2 (rounds to nearest EVEN number)
+    #      round(1.5) = 2 (rounds to nearest EVEN number)
+    #   3. Both equal 2, so 2 == 2 → True
 
-Python 3 uses 'round half to even'. This means if we pass 5 after the 
-point(any_integer.5) it will round it to an even number. But if we try 
-`print(round(5.3))`. We will get 5 which is an odd number.
+    print("\n  Banker's rounding examples:")
+    for val in [0.5, 1.5, 2.5, 3.5, 4.5]:
+        print(f"    round({val}) = {round(val)}")
 
-bool True has value 1 and False has value 0 as both are the subset of int.
 
-Therefore (2 == 2) ==> True.
-
-Thus, Answer B is solution
-'''
-
+if __name__ == "__main__":
+    quiz()
 
 # For more on Python follow: https://x.com/rs_punia_
