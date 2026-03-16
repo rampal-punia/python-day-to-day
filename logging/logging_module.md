@@ -39,7 +39,7 @@ logger.error("This is an error message")
 logger.critical("This is a critical message")
 ```
 
-In this example, we create a logger object with the name "example", and a console handler that outputs log messages to the console. We set the log level of the console handler to DEBUG, which means it will emit all log messages, regardless of their severity level. We also create a formatter that includes the timestamp, severity level, and message text in each log message.
+In this example, we create a logger object with the name "example", and a console handler that outputs log messages to the console. We set the log level of the console handler to DEBUG, whhhhich means it will emit all log messages, regardless of their severity level. We also create a formatter that includes the timestamp, severity level, and message text in each log message.
 
 We then add the console handler to the logger object, and emit some log messages at different severity levels. The messages are formatted according to the formatter we defined, and emitted to the console by the console handler.
 
